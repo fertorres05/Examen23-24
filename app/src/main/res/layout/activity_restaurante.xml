@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Restaurante"
+    android:background="@color/fondo_app">
+
+    <!--Nombre del bar-->
+    <TextView
+        android:id="@+id/nombre"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="BAR MANOLO"
+        android:textStyle="bold"
+        android:textSize="50dp"
+        android:textColor="#009688"
+        android:gravity="center"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_margin="18dp"/>
+
+
+    <!--2 asientos-->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/asientos2"
+        android:layout_width="100dp"
+        android:layout_height="150dp"
+        android:layout_margin="18dp"
+        app:cardCornerRadius="16dp"
+        app:cardBackgroundColor="@color/fondo_elemetos"
+        app:layout_constraintTop_toBottomOf="@id/nombre"
+        app:layout_constraintEnd_toStartOf="@id/asientos4">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center">
+            <ImageView
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:src="@drawable/asientos"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2 asientos"
+                android:gravity="center"/>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <!--4 asientos-->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/asientos4"
+        android:layout_width="100dp"
+        android:layout_height="150dp"
+        android:layout_margin="18dp"
+        app:cardCornerRadius="16dp"
+        app:cardBackgroundColor="@color/fondo_elemetos"
+        app:layout_constraintTop_toBottomOf="@id/nombre"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center">
+            <ImageView
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:src="@drawable/asientos"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="4 asientos"
+                android:gravity="center"/>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <!--8 asientos-->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/asientos8"
+        android:layout_width="100dp"
+        android:layout_height="150dp"
+        android:layout_margin="18dp"
+        app:cardCornerRadius="16dp"
+        app:cardBackgroundColor="@color/fondo_elemetos"
+        app:layout_constraintTop_toBottomOf="@id/nombre"
+        app:layout_constraintStart_toEndOf="@id/asientos4">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center">
+            <ImageView
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:src="@drawable/asientos"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="8 asientos"
+                android:gravity="center"/>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <!--Poner nombre del cliente -->
+    <TextView
+        android:id="@+id/textnom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        app:layout_constraintTop_toBottomOf="@id/asientos4"
+        app:layout_constraintStart_toStartOf="parent"
+        android:text="INTRODUCE TU NOMBRE"
+        android:textStyle="bold"
+        android:textSize="25dp"
+        android:textColor="@color/texto"/>
+
+    <EditText
+        android:id="@+id/inNom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        app:layout_constraintTop_toBottomOf="@id/textnom"
+        android:background="@color/fondo_cajatexto"
+        android:text="Name..."
+        android:textSize="20dp"
+        android:singleLine="true"
+        android:maxLines="1"/>
+
+    <!--Ajustar el hora de la reserva -->
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        app:layout_constraintTop_toBottomOf="@id/inNom"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:cardBackgroundColor="@color/fondo_elemetos"
+        app:cardCornerRadius="30dp">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <!--Adelantar hora -->
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/atrasarHora"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:backgroundTint="@color/fondo_cajatexto"
+            android:src="@drawable/flechaizq"/>
+
+        <TextView
+            android:id="@+id/tvHora"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="20:00"
+            android:textSize="40dp"
+            android:gravity="center"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:textStyle="bold"/>
+            <!--Atrasar hora-->
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/adelantarHora"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:backgroundTint="@color/fondo_cajatexto"
+            android:src="@drawable/flechader"
+            />
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/reservar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:backgroundTint="@color/fondo_elemetos"
+        android:src="@drawable/reserva"
+        app:maxImageSize="50dp"
+        app:layout_constraintStart_toStartOf="@id/asientos8"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginStart="70dp"
+        android:layout_marginBottom="16dp">
+
+    </com.google.android.material.floatingactionbutton.FloatingActionButton>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
